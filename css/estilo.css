@@ -1,0 +1,182 @@
+
+/* Registro */
+
+#formulario {
+
+    border: 1px solid #000;
+    padding: 20px;
+    margin: 20px;
+    margin-left: 30%;
+    margin-right: 30%;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #000;
+
+
+
+}
+
+.error {
+    border: 1px solid red;
+}
+
+#indicacion {
+    font-size: 13px;
+    color: #787575;
+    margin-left: 5px;
+    font-weight: bold;
+
+
+}
+
+#h1Regis {
+    font-size: 30px;
+    color: #000;
+
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#pCuenta {
+    font-size: 13px;
+    color: #787575;
+    margin-left: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* inicio sesion */
+
+@media (max-width: 576px) {
+    #formularioi {
+
+        border: 1px solid #000;
+        padding: 10px;
+        margin: 10px;
+        margin-left: 15%;
+        margin-right: 15%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #000;
+
+    }
+}
+@media (max-width: 1200px) {
+    #formularioi {
+
+        border: 1px solid #000;
+        padding: 20px;
+        margin: 20px;
+        margin-left: 30%;
+        margin-right: 30%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #000;
+
+    }
+}
+
+
+
+@media (min-width: 1200px) {
+    #formularioi {
+
+        border: 1px solid #000;
+        padding: 20px;
+        margin: 20px;
+        margin-left: 35%;
+        margin-right: 35%;
+        border-radius: 10px;
+        box-shadow: 0 0 10px #000;
+
+    }
+}
+
+
+
+
+
+#h1ini {
+    font-size: 30px;
+    color: #000;
+
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#pCuentaIni {
+    font-size: 13px;
+    color: #787575;
+    margin-left: 15px;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* vision */
+.vision {
+    border: 1px solid #000;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-shadow: 0 0 10px #000;
+    background-color: #fff;
+    top: 20%;
+    left: 35%;
+
+
+
+}
+
+/* index-alquilar */
+#inputBuscador {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    border: 1px solid #000;
+    border-radius: 10px;
+
+
+
+
+
+
+
+
+}
+
+/* subir libro */
+#fotoSubirLibro {
+    width: 100px;
+    height: 100px;
+    display: none;
+}
+
+#cartaAdmin {
+    /* centrar el div */
+    margin: 0 auto;
+    width: 50%;
+    /* centrar el div */
+    border: 1px solid #000;
+    padding: 20px;
+    margin-bottom: 10%;
+
+
+}
+
+.inicio {
+    cursor: pointer;
+}
+
+.blur {
+    cursor: pointer;
+}
+
+.corazon {
+    cursor: pointer;
+}
+
+.papelera {
+    cursor: pointer;
+}

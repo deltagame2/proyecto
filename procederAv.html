@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="./css/headers.css">
+    <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " ></script>
+    <script src="./js/prodecerAv.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="./index.html"
+                    class="d-flex align-items-center col-md-4 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <img class="bi me-5" width="70" height="62" src="./fotos/logo.png">
+                </a>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="./index.html" class="nav-link px-2 link-dark">Alquilar</a></li>
+                    <li><a href="./venta.html" class="nav-link px-2 link active">Compra-venta</a></li>
+                    <li><a href="./perfil.html" class="nav-link px-2 link-dark">Perfil</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark"></a></li>
+                </ul>
+
+               
+            </div>
+        </div>
+    </header>
+    <!-- header -->
+ <!-- Custom styles for this template -->
+ <link href="form-validation.css" rel="stylesheet">
+</head>
+<body>
+  
+<div class="container" id="body">
+<main>
+ 
+
+  <div class="row g-5">
+    <div class="col-md-5 col-lg-4 order-md-last">
+      <h4 class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-primary">Pedido</span>
+        <span class="badge bg-primary rounded-pill">1</span>
+      </h4>
+      <ul class="list-group mb-3">
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Titulo libro</h6>
+            <small class="text-muted" id="nombreLibro">Brief description</small>
+          </div>
+          <span class="text-muted"></span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Portada</h6>
+            <img src="./fotos/drama.png" id="imagenLibro" alt="" height="100px" >
+            <input type="hidden" id="vendedor">
+          </div>
+          
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Envio</h6>
+            
+          </div>
+          <span class="text-muted">2€</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between lh-sm">
+          <div>
+            <h6 class="my-0">Seguro comprador</h6>
+            
+          </div>
+          <span class="text-muted">2€</span>
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <span>Total (€)</span>
+          <strong id="precioLibro">4€</strong>
+          <input type="hidden" id="precioLibroO">
+        </li>
+        <li class="list-group-item d-flex justify-content-between">
+          <strong>Saldo disponible</strong>
+          <strong id="saldo">4€</strong>
+          <input type="hidden" id="saldoo">
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-7 col-lg-8">
+      <h4 class="mb-3">Informacion Necesaria</h4>
+      <form class="needs-validation" novalidate>
+        <div class="row g-3">
+          <div class="col-sm-6">
+            <label for="firstName" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              El nombre es obligatorio.
+            </div>
+          </div>
+
+          <div class="col-sm-6">
+            <label for="lastName" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" placeholder="" value="" required>
+            <div class="invalid-feedback">
+              Los apellidos son obligatorios.
+            </div>
+          </div>
+
+
+          <div class="col-12">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" class="form-control" id="email" placeholder="you@example.com" required>
+            <div class="invalid-feedback">
+              Por favor, introduzca una dirección de correo electrónico válida.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="address" class="form-label">dirección</label>
+            <input type="text" class="form-control" id="direccion" placeholder="C/" required>
+            <div class="invalid-feedback">
+              Por favor, introduzca su dirección de envío.
+            </div>
+          </div>
+
+          <div class="col-12">
+            <label for="address2" class="form-label">dirección 2 <span class="text-muted">(Opcional)</span></label>
+            <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+          </div>
+
+          <div class="col-md-4">
+            <label for="state" class="form-label">Comunidad autonoma</label>
+            <input type="text" class="form-control" id="country" placeholder="comunidad autonoma" required>
+            <div class="invalid-feedback">
+              por favor, introduzca su comunidad autonoma.
+            </div>
+          </div>
+
+          <div class="col-md-5">
+            <label for="country" class="form-label">Ciudad</label>
+            <input type="text" class="form-control" id="country" placeholder="ciudad" required>
+            <div class="invalid-feedback">
+              Por favor, introduzca su ciudad.
+            </div>
+          </div>
+
+          
+
+          <div class="col-md-3">
+            <label for="zip" class="form-label">Codigo postal</label>
+            <input type="text" class="form-control" id="codPostal" placeholder="" required>
+            <div class="invalid-feedback">
+              Codigo postal es obligatorio.
+            </div>
+          </div>
+        </div>
+
+        <hr class="my-4">
+
+        
+
+       
+
+        <button class="w-100 btn btn-primary btn-lg" type="button" id="botonFinal">Continuar con la compra</button>
+      </form>
+    </div>
+  </div>
+</main>
+
+
+
+
+  <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./js/validacionProcederA.js"></script>
+</body>
+</html>

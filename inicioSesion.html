@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="stylesheet" href="./css/headers.css">
+    <script src="./js/validarInicioSesion.js"></script>
+    <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " ></script>
+
+    <title>inicio de sesion</title>
+</head>
+
+<body>
+    <!-- header -->
+    <header class="p-3 mb-3 border-bottom">
+        <div class="container">
+            <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+                <a href="./index.html"
+                    class="d-flex align-items-center col-md-4 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <img class="bi me-5" width="70" height="62" src="./fotos/logo.png">
+                </a>
+
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="./index.html" class="nav-link px-2 link-dark">Alquilar</a></li>
+                    <li><a href="./venta.html" class="nav-link px-2 link-dark">Compra-venta</a></li>
+                    <li><a href="./registro.html" class="nav-link px-2  link active">Perfil</a></li>
+                    <li><a href="#" class="nav-link px-2 link-dark"></a></li>
+                </ul>
+
+                <div class="col-md-5  text-end">
+                    <button type="button" class="btn btn-outline-primary me-2">Login</button>
+                    <a href="./registro.html"> <button type="button" class="btn btn-primary">Registrarse</button></a>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- header -->
+    <div id="formularioi">
+            <h1 id="h1ini">Inicio sesion</h1>
+            <div class="form-group row">
+                <label for="inputEmail" class="col-sm-3 col-form-label">Email</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" id="inputEmail" placeholder="Email" name="email">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="contraseña" class="col-sm-3 col-form-label">Contraseña</label>
+                <div class="col-sm-10">
+                    <input type="password" class="form-control" id="contraseña" placeholder="Contraseña"
+                        name="contraseña">
+                </div>
+            </div>
+            <br>
+            <div class="form-group row">
+                <div class="col-sm-10">
+                    <input type="button" class="btn btn-primary" value="Inicio sesion" id="btn">
+                </div>
+            </div>
+            <div id="pCuentaIni">
+                <p>Has olvidado la contraseña? <a href="./recuperarContra.html">Recuperala aqui</a></p>
+            </div>
+            <div id="pCuentaIni">
+                <p>No tienes cuenta? <a href="./registro.html">Registrate aqui</a></p>
+            </div>
+
+    </div>
+
+</body>
+
+</html>

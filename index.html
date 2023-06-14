@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="./js/alquilar.js"></script>
+  <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js " ></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="./css/headers.css">
+  <link rel="stylesheet" href="./css/estilo.css">
+  <title>Booksell</title>
+</head>
+
+<body>
+  <!-- header -->
+  <header class="p-3 mb-3 border-bottom">
+    <div class="container">
+      <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="./index.html" class="d-flex align-items-center col-md-4 mb-2 mb-md-0 text-dark text-decoration-none">
+          <img class="bi me-5" width="70" height="62" src="./fotos/logo.png">
+        </a>
+
+        <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+          <li><a href="./index.html" class="nav-link px-2 link active">Alquilar</a></li>
+          <li><a href="./venta.html" class="nav-link px-2 link-dark">Compra-venta</a></li>
+          <li><a href="./perfil.html" class="nav-link px-2 link-dark">Perfil</a></li>
+          <li><a href="#" class="nav-link px-2 link-dark"></a></li>
+        </ul>
+
+        <div class="col-md-5  text-end" id="botonLogin">
+          <a href="./inicioSesion.html"><button type="button" class="btn btn-outline-primary me-2">Login</button></a>
+          <a href="./registro.html"> <button type="button" class="btn btn-primary">Registrarse</button></a>
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- header -->
+
+
+  <form action="">
+    <div class="input-group mb-12 row justify-content-center">
+
+
+
+      <div class="col-auto">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon1">Titulo</span>
+          <input type="text" class="form-control" placeholder="Titulo" aria-label="Username"
+            aria-describedby="basic-addon1" id="titulo">
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <div class="input-group ">
+          <span class="input-group-text" id="basic-addon2">Autor</span>
+          <input type="text" class="form-control" placeholder="Autor" id="autor" aria-label="Username"
+            aria-describedby="basic-addon1">
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon3">Editorial</span>
+          <input type="text" class="form-control" placeholder="Editorial" id="editorial" aria-label="Username"
+            aria-describedby="basic-addon1">
+        </div>
+      </div>
+
+      <div class="col-auto">
+        <div class="input-group">
+          <span class="input-group-text" id="basic-addon4">Genero</span>
+         <select name="genero" id="genero" placeholder="genero">
+          <option value=""></option>
+         </select>
+        </div>
+      </div>
+      <div class="col-auto"> <input type="button" id="inputBuscador" value="buscar"> </div>
+    </div>
+  </form>
+
+  <div class="album py-5" id="divPrincipal">
+    <div class="row justify-content-center text-center">
+      <h1>Alquila libros casi, casi, sin moverte del sofa!</h1>
+    </div>
+    <br>
+
+    <div class="row justify-content-center text-center">
+      <div class="card col-auto justify-content-center inicio" title="Drama">
+        <img src="./fotos/drama.png" alt="" id="drama" height="200px" width="200px">
+        <h1>Drama</h1>
+      </div>
+
+     <div class="col-1"></div>
+
+      <div class="card col-auto justify-content-center inicio" title="Fiction">
+        <img src="./fotos/ficcion.png" alt="" id="ficcion" height="200px" width="200px">
+        <h1>Ficcion</h1>
+      </div>
+
+      <div class="col-1"></div>
+
+      <div class="card col-auto justify-content-center inicio" title="History">
+        <img src="./fotos/historia.png" alt="" id="historia" height="200px" width="200px">
+        <h1>Historia</h1>
+      </div>
+    </div>
+
+
+    <div class="py-5 row justify-content-center text-center">
+      <div class="card col-auto justify-content-center inicio" title="pets">
+        <img src="./fotos/huella.png" alt="" id="mascotas" height="200px" width="200px">
+        <h1>Mascotas</h1>
+      </div>
+
+     <div class="col-1"></div>
+
+      <div class="card col-auto justify-content-center inicio" title="sports">
+        <img src="./fotos/deportes.png" alt="" id="deportes" height="200px" width="200px">
+        <h1>Deportes</h1>
+      </div>
+
+      <div class="col-1"></div>
+
+      <div class="card col-auto justify-content-center inicio">
+        <img src="./fotos/literatura.png" alt="" id="literatura" height="200px" width="200px">
+        <h1>Literatura</h1>
+      </div>
+    </div>
+
+  </div>
+
+  </main>
+  <!-- Footer -->
+
+  <footer class="footer">
+    <div id="fot">
+        <span class="">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="text-widget">
+                            <div class="wid-title">REDES SOCIALES</div>
+
+                            <ul class="ft-soc clearfix">
+                                <li><a href=""><i class="fa fa-facebook-square">FACEBOOK</i></a></li>
+                                <li><a href=""><i class="fa fa-twitter"></i>TWITTER</a></li>
+                                <li><a href=""><i class="fa fa-instagram"></i>INSTAGRAM</a></li>
+                                <li><a href=""><i class="fa fa-pinterest"></i>PINTEREST</a></li>
+                            </ul>
+                            <div class="clearfix"></div>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="quick-links">
+                            <div class="wid-title">LINKS DE PAGINA</div>
+                            <ul>
+                                <li><a href="index.html">INICIO</a></li>
+                                <li><a href="./venta.html">VENTA</a></li>
+                                <li><a href="./perfil.html">PERFIL</a></li>
+                              
+                               
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="term">
+                            <div class="wid-title">POLITICAS</div>
+                            <ul>
+                              <li> <a href="index.html">TARIFAS Y POLITICAS DE ENVIOS</a></li>
+                              <li> <a href="./index.html">POLITICA DEVOLUCIONES</a></li>
+                               <li>   <a href="./terminos.html">TERMINOS & CONDICIONES</a></li>
+                               <li>  <a href="./cookies.html">POLITICA COOKIES</a></li>
+                               <li>  <a href="privacidad.html">POLITICA PRIVACIDAD</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="quick-links">
+                            <div class="wid-title">SOBRE TI</div>
+
+                            <ul>
+                                <li><a href="#">MI CUENTA</a></li>
+                                <li><a href="#">INFORMACION PERSONAL</a></li>
+
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="subscribe">
+                            <div class="wid-title">SUSCRIBETE PARA RECIBIR OFERTAS Y NOVEDADES</div>
+                            <p>
+                                Ecribe aqui tu email para recibir ofertas y novedades sobre toda la tienda
+                            </p>
+                            <form>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="exampleInputEmail1"
+                                        placeholder="email">
+                                </div>
+                                
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+
+    </span>
+    </div>
+</footer>
+  <!-- Footer -->
+
+</body>
+
+</html>
