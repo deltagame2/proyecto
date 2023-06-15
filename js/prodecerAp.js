@@ -7,6 +7,84 @@ if (window.sessionStorage.getItem("email") == null) {
     var email = window.sessionStorage.getItem("email");
 }
 
+function checkbox() {
+    let check = document.getElementById("same");
+    if (check.checked == false) {
+        check.style.border = "1px solid red";
+        return false;
+    } else {
+        check.style.border = "1px solid green";
+        return true;
+    }
+}
+
+function validateCountry() {
+    let country = document.getElementById("country");
+    if (country.value == "") {
+        country.style.border = "1px solid red";
+        return false;
+    } else {
+        country.style.border = "1px solid green";
+        return true;
+    }
+}
+function validatecodPostal() {
+    let codPostal = document.getElementById("codPostal");
+    if (codPostal.value == "") {
+        codPostal.style.border = "1px solid red";
+        return false;
+    } else {
+        codPostal.style.border = "1px solid green";
+        return true;
+    }
+}
+
+function validateDireccion() {
+    let direccion = document.getElementById("direccion");
+    if (direccion.value == "") {
+        direccion.style.border = "1px solid red";
+        return false;
+    } else {
+        direccion.style.border = "1px solid green";
+        return true;
+    }
+}
+
+function validateNombre() {
+    let nombre = document.getElementById("nombre");
+    if (nombre.value == "") {
+        nombre.style.border = "1px solid red";
+        return false;
+    } else {
+        nombre.style.border = "1px solid green";
+
+        return true;
+
+    }
+}
+
+function validateApellidos() {
+    let apellidos = document.getElementById("apellidos");
+    if (apellidos.value == "") {
+        apellidos.style.border = "1px solid red";
+        return false;
+    } else {
+        apellidos.style.border = "1px solid green";
+        return true;
+    }
+
+}
+
+function validateEmail() {
+    let email = document.getElementById("email");
+    if (email.value == "") {
+        email.style.border = "1px solid red";
+        return false;
+    } else {
+        email.style.border = "1px solid green";
+        return true;
+    }
+}
 
 async function datosPersonales() {
     try {
@@ -27,9 +105,9 @@ async function datosPersonales() {
         let codPostal = document.getElementById("codPostal");
         let direccion = document.getElementById("direccion");
         let emailP = document.getElementById("email");
-        
+
         let saldoo = document.getElementById("saldoo");
-        saldoo.value = enTexto[0].saldo; 
+        saldoo.value = enTexto[0].saldo;
 
         emailP.value = enTexto[0].email;
         nombre.value = enTexto[0].nombre;
@@ -184,18 +262,30 @@ window.addEventListener("load", function (event) {
     botonFinal.addEventListener("click", async function (event) {
 
         let saldo1 = document.getElementById("saldoo").value;
-        
+
         if (parseInt(saldo1) < 4) {
             swal("No tienes suficiente saldo", "Recarga tu saldo", "error")
         } else {
+            validateCountry();
+            validatecodPostal();
+            validateDireccion();
+            validateApellidos();
+            validateNombre();
+            validateEmail();
+            checkbox();
 
-            crearPrestamo();
-            Actualizar();
-            await mandarEmail1();
-            await mandarEmail2();
-            let body = document.getElementById("body");
-            body.innerHTML = "";
-            body.innerHTML = "<h1>¡Enhorabuena!</h1><p>Ya puedes disfrutar de tu libro</p><a href='index.html'>Volver a la página principal</a>";
+            if (validateCountry() && validatecodPostal() && validateDireccion() && validateEmail() && validateApellidos() && validateNombre() && checkbox()) {
+
+                crearPrestamo();
+                Actualizar();
+                await mandarEmail1();
+                await mandarEmail2();
+                let body = document.getElementById("body");
+                body.innerHTML = "";
+                body.innerHTML = "<h1>¡Enhorabuena!</h1><p>Ya puedes disfrutar de tu libro</p><a href='index.html'>Volver a la página principal</a>";
+            } else {
+                swal("Rellena todos los datos obligatorios", "Gracias", "error");
+            }
         }
     });
 });

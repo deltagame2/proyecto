@@ -30,11 +30,12 @@ async function datosPersonales() { //mostar datos personales
         console.log("error" + error);
     }
 }
+var cont=0;
 async function datosLibrosPrestar() {//mostrar libros de prestamos
     try {
 
 
-        console.log("localhost/aproyecto/php/favoritosMostrarp.php?email=" + email);
+        console.log("https://booksell.store/php/favoritosMostrarp.php?email=" + email);
         let response = await fetch("https://booksell.store/php/favoritosMostrarp.php?email=" + email, {
             method: "GET",
             headers: { "Content-type": "application/json" }
@@ -63,6 +64,7 @@ async function datosLibrosPrestar() {//mostrar libros de prestamos
 
 
             for (let i = 0; i < enTexto.length; i++) {
+                cont++;
                 let imagen = enTexto[i].imagen;
                 let titulo = enTexto[i].titulo_libro;
                 let idPrestamo = enTexto[i].id_prestamo;
@@ -136,7 +138,7 @@ async function datosLibrosComprar() {//mostrar libros de prestamos
     try {
 
 
-        console.log("localhost/aproyecto/php/favoritosMostrarp.php?email=" + email);
+        console.log("https://booksell.store/php/favoritosMostrarv.php?email=" + email);
         let response = await fetch("https://booksell.store/php/favoritosMostrarv.php?email=" + email, {
             method: "GET",
             headers: { "Content-type": "application/json" }
@@ -167,7 +169,7 @@ async function datosLibrosComprar() {//mostrar libros de prestamos
             for (let i = 0; i < enTexto.length; i++) {
                 let imagen = enTexto[i].imagen;
                 let titulo = enTexto[i].titulo_libro;
-                let idventa = enTexto[i].idventa;
+                let idventa = enTexto[i].id_venta;
                 if (titulo.length > 20) {
                     titulo = titulo.substring(0, 20) + "...";
 
@@ -177,14 +179,14 @@ async function datosLibrosComprar() {//mostrar libros de prestamos
             <div class="col">            
 																<div class="card shadow-sm" >
 																
-																	<img src="`+ imagen + `" alt="" width="100%" height="225" class="blur">
+																	<img src="`+ imagen + `" alt="" width="100%" height="225" class="blur2">
 																	<div class="card-body">
-                                                                    <input type="hidden" id="`+ i + `" value="` + idventa + `">
+                                                                    <input type="hidden" id="`+ (i+cont) + `" value="` + idventa + `">
                                                                     <input type="hidden" class="email" value="`+ email + `">
 																		<p class="card-text">`+ titulo + `
 																			</p>
 																		
-																			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" s class="bi bi-trash3-fill papelera" viewBox="0 0 16 16" >
+																			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" s class="bi bi-trash3-fill papelera2" viewBox="0 0 16 16" >
   <path d="M11 1.5v1h3.5a.5.5 0 0 1 0 1h-.538l-.853 10.66A2 2 0 0 1 11.115 16h-6.23a2 2 0 0 1-1.994-1.84L2.038 3.5H1.5a.5.5 0 0 1 0-1H5v-1A1.5 1.5 0 0 1 6.5 0h3A1.5 1.5 0 0 1 11 1.5Zm-5 0v1h4v-1a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5ZM4.5 5.029l.5 8.5a.5.5 0 1 0 .998-.06l-.5-8.5a.5.5 0 1 0-.998.06Zm6.53-.528a.5.5 0 0 0-.528.47l-.5 8.5a.5.5 0 0 0 .998.058l.5-8.5a.5.5 0 0 0-.47-.528ZM8 4.5a.5.5 0 0 0-.5.5v8.5a.5.5 0 0 0 1 0V5a.5.5 0 0 0-.5-.5Z"/>
 </svg>
 																		</div>
@@ -197,18 +199,18 @@ async function datosLibrosComprar() {//mostrar libros de prestamos
             }
         }
         
-        for (let i = 0; i < document.getElementsByClassName("blur").length; i++) {
-            let todo = document.getElementsByClassName("blur")[i];
+        for (let i = 0; i < document.getElementsByClassName("blur2").length; i++) {
+            let todo = document.getElementsByClassName("blur2")[i];
             todo.addEventListener("click", function () {
-              let idventa = document.getElementById(i).value;
+              let idventa = document.getElementById(i+cont).value;
               window.sessionStorage.setItem("idventa", idventa);
               window.location.href = "https://booksell.store/visionAv.html";
       
             });
           }
 
-        for (let i = 0; i < document.getElementsByClassName("papelera").length; i++) {
-            let papelera = document.getElementsByClassName("papelera")[i];
+        for (let i = 0; i < document.getElementsByClassName("papelera2").length; i++) {
+            let papelera = document.getElementsByClassName("papelera2")[i];
             papelera.addEventListener("click", function () {
                 swal({
                     title: "¿Estas seguro?",
@@ -220,7 +222,7 @@ async function datosLibrosComprar() {//mostrar libros de prestamos
                   })
                   .then((willDelete) => {
                     if (willDelete) {
-                        eliminarLibroF(enTexto[i].id_prestamo);
+                        eliminarLibroFv(enTexto[i].id_venta);
                         swal("El libro ha sido borrado!", );
                       setTimeout(function(){ location.reload(); }, 1000);
                     }
@@ -239,6 +241,22 @@ async function datosLibrosComprar() {//mostrar libros de prestamos
 async function eliminarLibroF(id) {//eliminar libro de favoritos
     try {
         let response = await fetch("https://booksell.store/php/eliminarLibroFavoritos.php?id=" + id + "&email="+email,  {
+            method: "GET",
+            headers: { "Content-type": "application/json" }
+        });
+
+        let enTexto = await response.json();//convierte el objeto en json y el await espera a que se ejecute
+        console.log(enTexto + "hola");
+      
+        
+       
+    } catch (error) {
+        console.log("error" + error);
+    }
+}
+async function eliminarLibroFv(id) {//eliminar libro de favoritos comprar
+    try {
+        let response = await fetch("https://booksell.store/php/eliminarLibroFavoritosv.php?id=" + id + "&email="+email,  {
             method: "GET",
             headers: { "Content-type": "application/json" }
         });

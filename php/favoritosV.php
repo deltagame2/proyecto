@@ -15,7 +15,7 @@ include "./includes/credencialesftp.php";
 include "./includes/bdl.php";
 $id = $_GET['idVenta'];
 $email = $_GET['email'];
-$consulta = "INSERT INTO favoritosV (id_v, email) VALUES ('$id', '$email')";
+$consulta = "INSERT INTO favoritosv (id_v, email) VALUES ('$id', '$email')";
 $resultado = mysqli_query($c, $consulta);
 $array = array();
 if ($resultado) {

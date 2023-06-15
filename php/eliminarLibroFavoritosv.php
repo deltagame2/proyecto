@@ -13,29 +13,19 @@ if ($method == "OPTIONS") {
 }
 include "./includes/credencialesftp.php";
 include "./includes/bdl.php";
-$saldo = $_GET['saldo'];
-$emailComprador = $_GET['emailComprador'];
-$id = $_GET['id_venta'];
-$consulta = "INSERT INTO vendido (id_venta, emailComprador) VALUES ('$id', '$emailComprador')";
+
+$id = $_GET['id'];
+$email = $_GET['email'];
+$consulta = "DELETE FROM favoritosv WHERE id_v='$id' AND email='$email'";
 $resultado = mysqli_query($c, $consulta);
-
-$consulta2="UPDATE usuarios SET saldo=$saldo WHERE email='$emailComprador'";
-$resultado2 = mysqli_query($c, $consulta2);
-
-$consulta3="UPDATE venta SET vendido='si' WHERE id_venta='$id'";
-$resultado3 = mysqli_query($c, $consulta3);
-
-$consulta4 = "DELETE FROM favoritosv WHERE id_v='$id'";
-$resultado4 = mysqli_query($c, $consulta4);
-
-$arr = array();
+$array = array();
 if ($resultado) {
-    $arr['resultado'] = "OK";
+    $array['resultado'] = "OK";
 } else {
-    $arr['resultado'] = "ERROR";
+    $array['resultado'] = "ERROR";
 }
 mysqli_close($c);
-//indico que sera un JSON con UTF-8
+ //indico que sera un JSON con UTF-8
 header("Content-type: application/json; charset=utf-8");
 //muestro por pantalla
-echo json_encode($arr);
+echo json_encode($array);

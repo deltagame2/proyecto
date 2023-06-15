@@ -1,9 +1,7 @@
-if (window.sessionStorage.getItem("idPrestamo") == null) {
-    window.location.replace("index.html");
-}else {
+
     var idPrestamo = window.sessionStorage.getItem("idPrestamo");
     console.log(idPrestamo);
-}
+
 
 async function datosLibrosPrestar() {
     try {
