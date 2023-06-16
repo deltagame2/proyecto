@@ -1,4 +1,4 @@
-<!-- Correo Text/HTML -->
+
 <?php
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
@@ -89,11 +89,10 @@ if ($method == "OPTIONS") {
 
 //Creamos la variable cabecera con los elementos y ponemos al final
 //de cada elemento UN SALTO DE LINEA
-	$cabecera = "Date: ".date("l j F Y, G:i").$UN_SALTO;
-	$cabecera .="From: ".$remitente.$UN_SALTO;
-	$cabecera .="Cc:booksell@booksell.store".$UN_SALTO;
-	$cabecera .="Reply-To: ".$responder.$UN_SALTO;
-
+$cabecera = "Date: ".date("l j F Y, G:i").$UN_SALTO;
+$cabecera .="From: ".$remitente.$UN_SALTO;
+$cabecera .="Cc:booksell@booksell.store".$UN_SALTO;
+$cabecera .="Reply-To: ".$responder.$UN_SALTO;
 //Definimos el contenido Multipart, f�jate que lo acabamos con ";"
 	$cabecera .="Content-Type: multipart/alternative;".$UN_SALTO;
 
@@ -139,6 +138,6 @@ if ($method == "OPTIONS") {
 	$mensaje=$texto_plano.$texto_html;
 
 //Enviamos el mensaje
-	 mail($destinatario, $asunto, $mensaje,$cabecera)
+	 mail($destinatario, $asunto, $mensaje,$cabecera);
 	
 ?>

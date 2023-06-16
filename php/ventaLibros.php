@@ -43,7 +43,7 @@ if ($genero != "") {
   $cWhere = $cWhere .  "genero_libro LIKE '%" . $genero . "%' AND ";
 }
 
- $cWhere = $cWhere . "vendido='no' AND "."emailVendedor!='" . $email . "' AND ";
+ $cWhere = $cWhere . "vendido='no' AND emailVendedor!='" . $email . "' AND ";
  
 $consulta = $consulta . $cWhere . 1;
 $resultado = $c->query($consulta);

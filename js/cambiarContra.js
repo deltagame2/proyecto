@@ -117,6 +117,8 @@ window.addEventListener("load", function (event) {
     btn.addEventListener("click", function (event) {
         if(comprobarActual() && comprobarNueva()){
             cambiar();
+            document.getElementById("actual").value="";
+            document.getElementById("nueva").value="";
         }
        
     });

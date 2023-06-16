@@ -11,6 +11,7 @@ if ($method == "OPTIONS") {
     header("HTTP/1.1 200 OK");
     die();
 }
+
 include "./includes/credencialesftp.php";
 include "./includes/bdl.php";
 
@@ -26,6 +27,7 @@ if ($filas > 0) {
            
         //     $arr = "TODO OK";
         $arr=1;
+    
         
         
     }else{

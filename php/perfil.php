@@ -13,6 +13,7 @@ if ($method == "OPTIONS") {
 }
 include "./includes/credencialesftp.php";
 include "./includes/bdl.php";
+
 $email = $_GET['email'];
 $consulta = "SELECT * FROM usuarios WHERE email='$email'";
 $resultado = mysqli_query($c, $consulta);

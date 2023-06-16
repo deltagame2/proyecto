@@ -1,3 +1,21 @@
+
+
+<?php
+
+session_start();
+
+
+                            $paso = $_GET['email'];
+                            if ($paso != "") {
+                                
+                                $asunto = $_GET['asunto'];
+                                $mensaje = $_GET['mensaje'];
+                                $_SESSION['email'] = $_GET['email'];
+                                $root="https://booksell.store";
+                                 header("Refresh:0; url=".$root."/CorreoContacto.php?asunto=".$asunto."&mensaje=".$mensaje);
+                                // header("Location: https://booksell.store/CorreoContacto.php?asunto=" . $asunto . "&mensaje=" . $mensaje);
+                            }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,15 +23,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/estilo.css">
     <link rel="stylesheet" href="./css/headers.css">
-    <script src="./js/cambiarContra.js"></script>
+    <link rel="stylesheet" href="./css/estilo.css">
+    <script src="./js/perfil.js"></script>
     <script src=" https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script>
 
-    <title>Cambiar contraseña</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <title>Document</title>
 </head>
 
 <body>
@@ -22,8 +38,7 @@
     <header class="p-3 mb-3 border-bottom">
         <div class="container">
             <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-                <a href="./index.html"
-                    class="d-flex align-items-center col-md-4 mb-2 mb-md-0 text-dark text-decoration-none">
+                <a href="./index.html" class="d-flex align-items-center col-md-4 mb-2 mb-md-0 text-dark text-decoration-none">
                     <img class="bi me-5" width="70" height="62" src="./fotos/logo.png">
                 </a>
 
@@ -34,11 +49,7 @@
                     <li><a href="#" class="nav-link px-2 link-dark"></a></li>
                 </ul>
 
-                <div class="col-md-5  text-end">
-                    <a href="./inicioSesion.html"><button type="button"
-                            class="btn btn-outline-primary me-2">Login</button></a>
-                    <a href="./registro.html"> <button type="button" class="btn btn-primary">Registrarse</button></a>
-                </div>
+
             </div>
         </div>
     </header>
@@ -50,8 +61,7 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="d-flex flex-column align-items-center text-center">
-                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin"
-                                    class="rounded-circle p-1 bg-primary" width="110">
+                                <img src="https://bootdey.com/img/Content/avatar/avatar6.png" alt="Admin" class="rounded-circle p-1 bg-primary" width="110">
                                 <div class="mt-3">
                                     <h4 id="nomFoto">John Doe</h4>
                                     <p class="text-secondary mb-1" id="apeFoto">Full Stack Developer</p>
@@ -80,51 +90,93 @@
                                 <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
                                     <h6 class="mb-0"><a href="./masSaldo.html">Introducir saldo</a></h6>
                                 </li>
-
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6 class="mb-0"><a href="./contacto.php">Informar de un problema</a></h6>
+                                </li>
+                                <li class="list-group-item d-flex justify-content-between align-items-center flex-wrap">
+                                    <h6 class="mb-0"><button type="button" class="btn btn-primary" id="cerrarSesion">Cerrar sesion</button></h6>
+                                </li>
 
                             </ul>
                         </div>
                     </div>
                 </div>
 
-                <div class="col-lg-8">
+                <div class="col-lg-8 text-center">
+                    <h1>Formulario de Contacto</h1>
+                    <br>
 
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <div id="">
-                                <h1 id="h1ini">Cambiar contraseña</h1>
-                                <div class="form-group row">
-                                    <label for="actual" class=" col-form-label">Contraseña actual</label>
-                                    <div class="col-sm-10">
-                                        <input type="text" class="form-control" id="actual"
-                                            placeholder="Contraseña actual" name="actual">
-                                    </div>
-                                </div>
-                                <div class="form-group row">
-                                    <label for="nueva" class="col-form-label">Contraseña Nueva</label>
-                                    <div class="col-sm-10">
-                                        <input type="password" class="form-control" id="nueva"
-                                            placeholder="Contraseña Nueva" name="nueva">
-                                        <label for="nueva
-                                            " id="indicacion">(4 caracteres)</label>
-                                    </div>
-                                </div>
-                                <div>
-                                    <input type="hidden" name="emailo" id="emailo" value="a">
-                                </div>
-                                <br>
-                                <div class="form-group row">
-                                    <div class="col-sm-10">
-                                        <input type="button" class="btn btn-primary" value="Cambiar contraseña"
-                                            id="submit">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <form action="" method="GET" id="formularioi">
+
+                        <form action="" method="GET" id="formularioi">
+                            <label for="email">Email :</label>
+                            <input type="email" id="email" name="email"><br><br>
+
+                            <label for="asunto">asunto:</label>
+                            <input type="asunto" id="asunto" name="asunto"><br><br>
+
+                            <label for="mensaje">Mensaje:</label>
+                            <textarea id="mensaje" name="mensaje" rows="5"></textarea><br><br>
+
+                            <input type="submit" value="Enviar" id="boton" name="boton" class="btn-primary">
+
+                            
+
+
+                           
+                        </form>
                 </div>
+
+                <script>
+                    var email = document.getElementById("email");
+                    var asunto = document.getElementById("asunto");
+                    var mensaje = document.getElementById("mensaje");
+                    let boton = document.getElementById("boton");
+
+                    function validarEmail() {
+                        if (email.value == "") {
+                            email.style.borderColor = "red";
+                            return false;
+                        } else {
+                            email.style.borderColor = "green";
+                            return true;
+                        }
+                    }
+
+                    function validarAsunto() {
+                        if (asunto.value == "") {
+                            asunto.style.borderColor = "red";
+                            return false;
+                        } else {
+                            asunto.style.borderColor = "green";
+                            return true;
+                        }
+                    }
+
+                    function validarMensaje() {
+                        if (mensaje.value == "") {
+                            mensaje.style.borderColor = "red";
+                            return false;
+                        } else {
+                            mensaje.style.borderColor = "green";
+                            return true;
+                        }
+                    }
+
+                    let form = document.getElementById("formularioi");
+                    form.addEventListener("submit", function(event) {
+                        event.preventDefault();
+                        if (validarEmail() && validarAsunto() && validarMensaje()) {
+                            form.submit();
+                        } else {
+                            swal("Error", "Rellene todos los campos", "error")
+                        }
+                    });
+                </script>
+
             </div>
         </div>
+    </div>
     </div>
     <footer class="footer">
         <div id="fot">
@@ -188,8 +240,7 @@
                                 </p>
                                 <form>
                                     <div class="form-group">
-                                        <input type="email" class="form-control" id="exampleInputEmail1"
-                                            placeholder="email">
+                                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="email">
                                     </div>
 
                                 </form>
@@ -202,17 +253,4 @@
         </span>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"
-        integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+"
-        crossorigin="anonymous"></script>
-
-
-</body>
-
-</html>
+    <!-- Footer -->

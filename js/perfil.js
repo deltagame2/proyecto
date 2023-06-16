@@ -115,8 +115,8 @@ async function datosLibrosPrestar() {//mostrar libros de prestamos
             let papelera = document.getElementsByClassName("papelera")[i];
             papelera.addEventListener("click", function () {
                 swal({
-                    title: "¿Estas seguro?",
-                    text: "Borraras el libro y no estara disponible!",
+                    title: "¿Estás seguro?",
+                    text: "Borraras el libro y no estará disponible!",
                     icon: "warning",
                     dangerMode: true,
                     buttons: true,
@@ -206,8 +206,8 @@ async function datosLibrosVender() {//mostrar libros de venta
             let papelera2 = document.getElementsByClassName("papelera2")[i];
             papelera2.addEventListener("click", function () {
                 swal({
-                    title: "¿Estas seguro?",
-                    text: "Borraras el libro y no estara disponible!",
+                    title: "¿Estás seguro?",
+                    text: "Borraras el libro y no estará disponible!",
                     icon: "warning",
                     dangerMode: true,
                     buttons: true,

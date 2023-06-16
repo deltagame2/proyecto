@@ -282,7 +282,28 @@ window.addEventListener("load", function (event) {
                 await mandarEmail2();
                 let body = document.getElementById("body");
                 body.innerHTML = "";
-                body.innerHTML = "<h1>¡Enhorabuena!</h1><p>Ya puedes disfrutar de tu libro</p><a href='index.html'>Volver a la página principal</a>";
+                body.innerHTML = `<div class="container">
+                <h1>¡Enhorabuena por tu prestamo!</h1>
+                <p>
+                  Estimado/a cliente,
+                </p>
+                <p>
+                  Queremos felicitarte por tu prestamo en nuestra tienda. ¡Esperamos que disfrutes de tu nuevo libro!
+                </p>
+                <p>
+                  Si tienes alguna pregunta o necesitas asistencia adicional, no dudes en ponerte en contacto con nuestro equipo de atención al cliente. Estaremos encantados de ayudarte en todo lo que necesites.
+                </p>
+                <p>
+                  ¡Gracias por elegir nuestra tienda y esperamos verte de nuevo pronto!
+                </p>
+                <a href="index.html" class="back-link">Volver a la página principal</a>
+                <br>
+                <p></p>
+                <p></p>
+                <p></p>
+                <p></p>
+                </div>
+                `;
             } else {
                 swal("Rellena todos los datos obligatorios", "Gracias", "error");
             }

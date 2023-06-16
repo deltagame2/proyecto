@@ -132,7 +132,7 @@ async function datosLibrosPrestar() {//mostrar libros de prestamos
             papelera.addEventListener("click", function () {
                 swal({
                     title: "¿Quieres devolverlo?",
-                    text: "Devolveras el libro a su dueño!",
+                    text: "Devolverás el libro a su dueño!",
                     icon: "warning",
                     dangerMode: true,
                     buttons: true,
@@ -143,7 +143,7 @@ async function datosLibrosPrestar() {//mostrar libros de prestamos
                             await mandarEmail1(titulo);
                             await mandarEmail2(titulo, emailPrestador);
                             await devolver(enTexto[i].id_prestamo, enTexto2[i].fecha_fin);
-                            swal("Se procesara la devolucion!",);
+                            swal("Se procesara la devolución!",);
                             // setTimeout(function () { location.reload(); }, 1000);
                         }
 

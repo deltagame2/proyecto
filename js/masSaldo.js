@@ -131,6 +131,11 @@ window.addEventListener("load", function (event) {
         if(n==true && t==true && c==true && cv==true && s==true){
             let saldo = document.getElementById("saldo").value;
             introducirSaldo(saldo);
+            document.getElementById("name").value = "";
+            document.getElementById("number").value = "";
+            document.getElementById("expiration").value = "";
+            document.getElementById("cvc").value = "";
+            document.getElementById("saldo").value = "";
         }
     });
 });

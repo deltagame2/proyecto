@@ -22,7 +22,8 @@ async function mandarEmail(numero) {
 
 
 
-} function comprobarNumero(numero, numero2) {
+} 
+function comprobarNumero(numero, numero2) {
     if (numero == numero2) {
         return true;
     } else {
@@ -66,14 +67,14 @@ window.addEventListener("load", function (event) {
         let divPrin = document.getElementById("divPrin");
         //nuevo div
         let divNumero = document.getElementById("divNumero");
-        divNumero.innerHTML = `<label for='nueva' class='col-form-label' > Introduce el numero</label >
+        divNumero.innerHTML = `<label for='nueva' class='col-form-label' > Introduce el número</label >
             <div class='col-sm-10'>
              <input type='text' class='form - control' id='numeroIntro' >
              </div > 
              <br>
              <div class="form-group row">
                                     <div class="col-sm-10">
-                                        <input type="button" class="btn btn-primary" value="Comprobar numero" id="ComprobarNumero">
+                                        <input type="button" class="btn btn-primary" value="Comprobar número" id="ComprobarNumero">
                                     </div>
                                 </div>
              `;
@@ -81,7 +82,7 @@ window.addEventListener("load", function (event) {
         botonComprobar.addEventListener("click", function (event) {
             let numeroIntro = document.getElementById("numeroIntro").value;
             if (comprobarNumero(numero, numeroIntro)) {
-                swal("El numero introducido es correcto", " ", "success");
+                swal("El número introducido es correcto", " ", "success");
                 divNumero.innerHTML = `<label for='nueva' class='col-form-label' > Introduce la nueva contraseña</label >
                 <div class='col-sm-10'>
                     <input type='text' class='form - control' id='nueva' >
@@ -102,8 +103,8 @@ window.addEventListener("load", function (event) {
 
 
             } else {
-                swal("El numero introducido es incorrecto", " ", "error");
-                divNumero.innerHTML = `<label for='nueva' class='col-form-label' > Numero incorrecto</label >
+                swal("El número introducido es incorrecto", " ", "error");
+                divNumero.innerHTML = `<label for='nueva' class='col-form-label' > Número incorrecto</label >
                     <div class='col-sm-10'>
                         <input type='button' class='btn btn-primary' id='nueva' value="Volver a intentarlo">
                     </div >

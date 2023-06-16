@@ -1,4 +1,4 @@
-<!-- Correo Text/HTML -->
+
 <?php
 header('Access-Control-Allow-Origin: *');
     header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
@@ -146,6 +146,6 @@ header('Access-Control-Allow-Origin: *');
 	$mensaje=$texto_plano.$texto_html;
 
 //Enviamos el mensaje
-	 mail($destinatario, $asunto, $mensaje,$cabecera)
+	 mail($destinatario, $asunto, $mensaje,$cabecera);
 	
 ?>

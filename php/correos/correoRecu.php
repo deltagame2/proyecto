@@ -1,4 +1,4 @@
-<!-- Correo Text/HTML -->
+
 <?php 
 header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: GET, PUT, POST, DELETE, OPTIONS');
@@ -12,6 +12,7 @@ if ($method == "OPTIONS") {
     header("HTTP/1.1 200 OK");
     die();
 }
+
 //Para m�s comodidad creamos las variables $UN_SALTO y $DOS_SALTOS
 	$UN_SALTO="\r\n";
 	$DOS_SALTOS="\r\n\r\n";
@@ -141,6 +142,6 @@ if ($method == "OPTIONS") {
 	$mensaje=$texto_plano.$texto_html;
 
 //Enviamos el mensaje
-	 mail($destinatario, $asunto, $mensaje,$cabecera)
+	 mail($destinatario, $asunto, $mensaje,$cabecera);
 	
 ?>

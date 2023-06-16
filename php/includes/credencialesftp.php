@@ -13,5 +13,5 @@ if ($method == "OPTIONS") {
 }
 $host="localhost";
 $usuario="u288612056_booksell";
-$contraseña="Tumamaesunhombre1";
+$contraseña="";
 ?>
